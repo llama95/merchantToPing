@@ -1,8 +1,24 @@
+server:
+  port : 5000
 spring:
   security:
     oauth2:
       client:
         registration:
-          github:
-            client-id: your-github-client-id
-            client-secret: your-github-client-secret
+          openid:
+            client-id: MerchantPortal
+            client-secret: 678aBCf0089a%2bbc70141FFd84fc7a9!@da22T8
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:5000/login/oauth2/code/pingidentity
+
+        provider:
+            openid:
+              authorization-uri: https://oit-shared-t-01-pingfederationweb.oit-shared.com/as/authorization.oauth2
+              token-uri: https://oit-shared-t-01-pingfederationweb.oit-shared.com/as/token.oauth2
+              user-info-uri: https://oit-shared-t-01-pingfederationweb.oit-shared.com/idp/userinfo.openid
+              jwk-set-uri: https://oit-shared-t-01-pingfederationweb.oit-shared.com/pf/JWKS
+
+#
+##
+#"userName": "joneal946678",
+#              "password": "Alissa0131!",
